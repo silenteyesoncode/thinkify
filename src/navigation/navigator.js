@@ -5,22 +5,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import LocationScreen from '../location';
 import CameraScreen from '../camera';
+import Gallery from '../pictures';
+import DialCall from '../dial';
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
 
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +17,9 @@ export default function Home() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="location" component={LocationScreen} />
-        <Tab.Screen name="Settings" component={CameraScreen} />
+        <Tab.Screen name="settings" component={CameraScreen} />
+        <Tab.Screen name="gallery" component={Gallery} />
+        <Tab.Screen name="dialCall" component={DialCall} />
       </Tab.Navigator>
     </NavigationContainer>
   );
